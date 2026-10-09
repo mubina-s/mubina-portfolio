@@ -10,7 +10,7 @@
 <link href="https://github.com" rel="preconnect"/>
 <link href="styles.css" rel="stylesheet"/>
 </head>
-<body>
+<body><div aria-hidden="true" class="scroll-progress"><span id="scrollProgress"></span></div>
 <div aria-hidden="true" class="noise"></div>
 <header class="site-header">
 <a aria-label="Mubina home" class="brand" href="#home">
@@ -18,7 +18,7 @@
 <span>MUBINA<span class="accent">.SEC</span></span>
 </a>
 <button aria-controls="siteNav" aria-expanded="false" class="menu-button" id="menuButton">Menu</button>
-<nav aria-label="Main navigation" class="site-nav" id="siteNav"><a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#studies">Study Cases</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#references">References</a><a href="#reflections">Reflections</a><a href="#blog">Blog</a><a href="#goals">Goals</a><a href="#contact">Contact</a><button class="nav-ai" data-open-ai="">Ask AI ✦</button></nav>
+<nav aria-label="Main navigation" class="site-nav" id="siteNav"><a href="#about">About</a><a href="#experience">Experience</a><a href="#studies">Study Cases</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#reflections">Reflections</a><a class="nav-resume" href="assets/Mubina_Sadriddinova_Resume.pdf" rel="noopener" target="_blank">Resume</a><a href="#contact">Contact</a><button class="nav-ai" data-open-ai="">Ask AI ✦</button></nav>
 </header>
 <main>
 <!-- Large Cinematic Scroll-Driven Visual -->
@@ -63,13 +63,32 @@ secure development
 embedded systems
 
 <span class="muted">$</span> status
-<span class="accent">learning // building // securing</span></code></pre>
+<span class="accent terminal-live" id="terminalLive">learning // building // securing</span></code></pre>
 </div>
 </aside>
-</section><section aria-label="Interactive Portrait" class="cinematic-showcase" id="heroStage">
+</section><div aria-label="Current status" class="currently-strip reveal">
+<span class="currently-label"><span class="status-dot"></span>Currently</span>
+<span>Cybersecurity Engineering @ Iowa State</span><span class="strip-dot">·</span>
+<span>Senior Design: Agentic AI</span><span class="strip-dot">·</span>
+<span>Graduating May 2027</span><span class="strip-dot">·</span>
+<span>Open to Security Opportunities</span>
+</div><section aria-label="Interactive Portrait" class="cinematic-showcase" id="heroStage">
 <div class="cinematic-frame" id="cinematicFrame">
 <canvas aria-label="Mubina Sadriddinova animated portrait" class="cinematic-canvas" id="hero-animation-canvas"></canvas>
 <div class="frame-ambient-glow"></div>
+</div>
+</section><section class="section career-objective" id="career-objective">
+<div class="section-heading reveal">
+<p class="eyebrow">Career Objective</p>
+<h2>Understand systems. Find weaknesses. Help make technology safer.</h2>
+</div>
+<div class="objective-shell reveal">
+<p>I’m working toward a career in cybersecurity engineering, SOC, or security analysis where I can investigate how systems behave, identify security problems and threats, and help protect information. I want to keep building across networking, Linux, software, and security because the field changes constantly and strong security requires continuous learning.</p>
+<div class="objective-points">
+<div><span>01</span><strong>Understand systems</strong></div>
+<div><span>02</span><strong>Investigate threats</strong></div>
+<div><span>03</span><strong>Build safer technology</strong></div>
+</div>
 </div>
 </section><section class="section section-grid" id="about">
 <div class="section-heading reveal">
@@ -152,9 +171,14 @@ embedded systems
 <p class="eyebrow">04 / Featured Projects</p>
 <h2>Selected work across software and embedded systems.</h2>
 <p class="section-note">Each project highlights what the system did, my role, what I learned, the resources used, and the larger contribution.</p>
+</div><div aria-label="Filter projects" class="project-filters reveal">
+<button class="filter-button active" data-filter="all" type="button">All</button>
+<button class="filter-button" data-filter="cyber" type="button">Cyber / AI</button>
+<button class="filter-button" data-filter="software" type="button">Software</button>
+<button class="filter-button" data-filter="embedded" type="button">Embedded</button>
 </div>
 <div class="project-grid">
-<article class="project-card project-featured reveal">
+<article class="project-card project-featured reveal" data-category="software">
 <div class="project-number">01</div>
 <div>
 <div class="project-label">Full-Stack Android · COM S 3090</div>
@@ -178,7 +202,7 @@ embedded systems
 </div>
 </div>
 </article>
-<article class="project-card reveal">
+<article class="project-card reveal" data-category="embedded">
 <div class="project-number">02</div>
 <div>
 <div class="project-label">Embedded Systems · CPRE 2880</div>
@@ -202,7 +226,7 @@ embedded systems
 </div>
 </div>
 </article>
-<article class="project-card reveal">
+<article class="project-card reveal" data-category="software">
 <div class="project-number">03</div>
 <div>
 <div class="project-label">Software Engineering · SE 186</div>
@@ -224,7 +248,7 @@ embedded systems
 </div>
 </div>
 </article>
-<article class="project-card project-featured senior-card reveal">
+<article class="project-card project-featured senior-card reveal" data-category="cyber">
 <div class="project-number">04</div>
 <div>
 <div class="senior-heading-row">
@@ -234,25 +258,25 @@ embedded systems
 </div>
 <span class="project-status"><span></span> In progress</span>
 </div>
-<p class="project-role">Project Planning / Scheduling Lead • Five-person senior design team</p>
+<p class="project-detail-label">Description of project</p><p class="project-role">Project Planning / Scheduling Lead • Five-person senior design team</p>
 <p>
               A year-long, five-person senior design project developing an agentic AI system to support
               early-stage circuit card design. The system is intended to help identify design constraints
               and requirements, review relevant prior designs and online specifications, and provide useful
               design suggestions to hardware engineers.
             </p>
-<div class="senior-highlights">
-<div><strong>My role</strong><span>Coordinate project planning and schedules, monitor deadlines, maintain the shared task tracker and team records, and help keep work aligned across the team.</span></div>
-<div><strong>Technical focus</strong><span>Python, Linux, Docker, LLM and agentic-system research, circuit-card design, requirements, and hardware-design automation.</span></div>
-<div><strong>Planned deliverable</strong><span>A cloud-based agentic system running in a Docker container and applied to an image-sensor embedded machine-learning hardware design.</span></div>
-<div><strong>Industry collaboration</strong><span>Weekly client video meetings with guidance from an experienced circuit-card development professional.</span></div>
-</div>
+<div class="senior-highlights"><div><strong>My role</strong><span>Coordinate project planning and schedules, monitor deadlines, maintain the shared task tracker and team records, and help keep work aligned across the five-person team.</span></div><div><strong>Skills &amp; knowledge gained</strong><span>Project planning, requirements thinking, Linux/Docker workflows, agentic AI research, technical communication, scheduling, and learning across cybersecurity and hardware design.</span></div><div><strong>Resources used</strong><span>Python, Linux, Docker, cloud servers, LLMs / agentic systems, circuit-card design resources, team documentation, and weekly industry-client meetings.</span></div><div><strong>Big-picture contribution</strong><span>Help the team turn a broad automation idea into an organized, testable engineering workflow that can support early-stage circuit-card design decisions.</span></div></div>
 <div aria-label="Senior design project timeline" class="senior-timeline">
 <div><span>Phase 01</span><strong>Requirements + setup</strong><p>Define requirements, identify design processes that can be automated, learn the server environment, and establish the Docker workflow.</p></div>
 <div><span>Phase 02</span><strong>Agent skills + harnesses</strong><p>Build and evaluate agent capabilities that support research, constraint discovery, information gathering, and design assistance.</p></div>
 <div><span>Phase 03</span><strong>Example hardware design</strong><p>Apply the system to a small hardware design and evaluate how effectively it supports early-stage engineering work.</p></div>
 </div>
-<div class="tag-row senior-tags"><span>Python</span><span>Linux</span><span>Docker</span><span>LLMs</span><span>Agentic AI</span><span>Circuit Cards</span></div>
+<div class="supporting-materials">
+<span class="supporting-label">Supporting documents &amp; presentation</span>
+<div class="card-links">
+<a href="https://mubina-s.github.io/pi-sme-project-presentation/" rel="noopener" target="_blank">CPRE 4910 Presentation ↗</a>
+</div>
+</div><div class="tag-row senior-tags"><span>Python</span><span>Linux</span><span>Docker</span><span>LLMs</span><span>Agentic AI</span><span>Circuit Cards</span></div>
 <p class="small-note">This project is currently in progress, so this section will grow as the team completes milestones, demonstrations, testing, and final design deliverables.</p>
 </div>
 </article>
@@ -267,6 +291,9 @@ embedded systems
 <div><h3>Programming</h3><p>Java • C • HTML • XML • Bash • LEGv8 Assembly • Verilog</p></div>
 <div><h3>Software &amp; Systems</h3><p>Android Studio • Volley • WebSockets • REST APIs • Git • GitHub • VS Code • Cygwin</p></div>
 <div><h3>Embedded / Hardware</h3><p>Embedded C • CyBot • UART • Interrupts • ADC • Sensors • Servo Control • FPGA • System Design</p></div>
+</div><div class="learning-rail reveal">
+<div><p class="eyebrow">Currently building depth in</p><h3>Tools + topics I’m actively using</h3></div>
+<div class="learning-chips"><span>🐧 Linux</span><span>🐳 Docker</span><span>🤖 Agentic AI</span><span>🔎 Security Monitoring</span><span>🌐 Networking</span><span>🧠 Applied Cryptography</span></div>
 </div>
 </section><section class="section" id="references">
 <div class="section-heading reveal">
@@ -279,33 +306,18 @@ embedded systems
 <p>References who can speak to my leadership, teamwork, reliability, and technical growth are available upon request.</p>
 <div class="card-links"><a href="mailto:mubish@iastate.edu?subject=Reference%20request%20from%20your%20portfolio">Request references →</a></div>
 </article>
-
-
-
 </div>
-</section><section class="section" id="reflections"><div class="section-heading reveal"><p class="eyebrow">07 / Reflections</p><h2>What I’ve learned, and how I think about the work.</h2><p class="section-note">These reflections connect my coursework, engineering growth, communication, ethics, and the larger impact of technical decisions.</p></div><div class="reflection-grid"><article class="reflection-card reveal">
-<h3>General Education Reflection</h3>
-<p>
-            My general education coursework has broadened how I approach technical problems.
-            English strengthened my research, technical communication, usability, and audience-awareness
-            skills. Criminal Justice coursework strengthened my thinking about evidence, investigations,
-            institutions, policy, and accountability. Together, these courses help me communicate technical
-            work more clearly and consider the people and systems affected by security decisions.
-          </p>
-</article><article class="reflection-card reveal">
-<h3>Cumulative Reflection</h3>
-<p>
-            My coursework has progressed from programming fundamentals into data structures,
-            computer architecture, embedded systems, full-stack software, Linux, networking, and
-            cybersecurity. That progression has changed the way I see security: vulnerabilities
-            rarely exist in isolation. They emerge from interactions among code, hardware, networks,
-            configurations, users, and organizational decisions. I want to continue developing the
-            breadth to understand those layers and the depth to secure them responsibly.
-          </p>
-</article><article class="reflection-card warning reveal">
-<h3>Engineering Ethics</h3>
-<p>Ethics is part of how I think about security work: technical decisions affect privacy, access, evidence, safety, and trust. I want my engineering choices to be defensible not only because they work, but because they are responsible.</p>
-</article></div></section><section class="section blog-section" id="blog">
+</section><section class="section reflections-section" id="reflections"><div class="section-heading reveal"><p class="eyebrow">07 / Reflections &amp; Documents</p><h2>What I’ve learned—and the work behind it.</h2><p class="section-note">Short reflections stay readable here; full papers and supporting documents live in a separate compact shelf below.</p></div>
+<div class="reflection-grid compact-reflections">
+<article class="reflection-card reveal"><h3>General Education Reflection</h3><p>English and Criminal Justice coursework strengthened my research, technical communication, audience awareness, evidence-based thinking, and understanding of policy and accountability.</p></article>
+<article class="reflection-card reveal"><h3>Cumulative Reflection</h3><p>My engineering experience has taught me that technical work depends on teamwork, communication, troubleshooting, ethics, time management, and the ability to keep learning when a system does not work the first time.</p><div class="card-links"><a href="assets/documents/Cumulative-Reflection.pdf" rel="noopener" target="_blank">Read full reflection ↗</a></div></article>
+</div>
+<div aria-label="Academic papers and portfolio documents" class="document-shelf reveal">
+<div class="document-shelf-intro"><p class="eyebrow">Academic documents</p><h3>Ethics &amp; Professional Issues — CYBE 2340</h3><p>CPRE/EE 394 was not required in my degree plan, so this section includes ethics and professional-issues work from CYBE 2340 instead.</p></div>
+<a class="document-row" href="assets/documents/CYBE2340-Writing-Assignment-1.pdf" rel="noopener" target="_blank"><span class="doc-index">01</span><span><strong>Cybersecurity, responsibility &amp; career direction</strong><small>Security, ethics, human factors, and professional responsibility</small></span><span class="doc-arrow">View PDF ↗</span></a>
+<a class="document-row" href="assets/documents/CYBE2340-Writing-Assignment-2.pdf" rel="noopener" target="_blank"><span class="doc-index">02</span><span><strong>Privacy, consent &amp; student webcams</strong><small>Kantianism, Utilitarianism, Virtue Ethics, privacy, and trust</small></span><span class="doc-arrow">View PDF ↗</span></a>
+<a class="document-row" href="assets/documents/CYBE2340-Writing-Assignment-3.pdf" rel="noopener" target="_blank"><span class="doc-index">03</span><span><strong>AI Overviews &amp; technology responsibility</strong><small>Impact on creators, accuracy, power imbalance, and responsible rollout</small></span><span class="doc-arrow">View PDF ↗</span></a>
+</div></section><section class="section blog-section" id="blog">
 <div class="section-heading reveal">
 <p class="eyebrow">08 / Blog &amp; Interests</p>
 <h2>Cybercrime notes, security questions, and interests beyond engineering.</h2>
@@ -359,7 +371,7 @@ embedded systems
 <a href="mailto:mubish@iastate.edu">mubish@iastate.edu</a>
 <a href="https://github.com/mubina-s" rel="noopener" target="_blank">GitHub / mubina-s ↗</a>
 <a href="https://www.linkedin.com/in/mubina-sadriddinova-bb889a363/" rel="noopener" target="_blank">LinkedIn ↗</a>
-</div>
+<button class="copy-email" data-email="mubish@iastate.edu" id="copyEmail" type="button">Copy email</button></div>
 <button class="button primary contact-ai-button" data-open-ai="" type="button">Ask about my portfolio</button>
 </div>
 <form class="contact-form" id="contactForm">
@@ -388,7 +400,7 @@ embedded systems
 <span>© <span id="year"></span> Mubina Sadriddinova</span>
 <span>Built for GitHub Pages · <strong>free + HTTPS</strong></span>
 </footer>
-<button aria-label="Open Ask My Portfolio AI" class="ai-fab" data-open-ai="">
+<button aria-label="Back to top" class="back-to-top" id="backToTop" type="button">↑</button><button aria-label="Open Ask My Portfolio AI" class="ai-fab" data-open-ai="">
 <span>✦</span> Ask My Portfolio
   </button>
 <div class="ai-backdrop" hidden="" id="aiBackdrop"></div>

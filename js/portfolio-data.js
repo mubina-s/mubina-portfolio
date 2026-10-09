@@ -109,4 +109,30 @@ window.PORTFOLIO_KNOWLEDGE = [
     url: "#goals"
   }
 
+  ,
+  {
+    title: "Career objective and current direction",
+    text: "Mubina is graduating in May 2027 and is open to cybersecurity engineering, SOC, and security analyst opportunities. Her goal is to understand systems, investigate threats and weaknesses, protect information, and keep building skills across networking, Linux, software, and security.",
+    answer: "Mubina is targeting cybersecurity engineering, SOC, and security analyst roles after her May 2027 graduation. She wants to understand systems deeply, investigate threats and weaknesses, and help build safer technology while continuing to learn across Linux, networking, software, and security.",
+    url: "#career-objective"
+  },
+  {
+    title: "Ethics and professional issues papers",
+    text: "Mubina's CYBE 2340 ethics and professional-issues writing includes cybersecurity responsibility and human factors, privacy and consent in student webcam monitoring analyzed through Kantianism, Utilitarianism, and Virtue Ethics, and the social and professional impact of AI search technologies on creators, users, accuracy, and trust.",
+    answer: "Her CYBE 2340 papers examine cybersecurity responsibility, privacy and informed consent, ethical frameworks including Kantianism/Utilitarianism/Virtue Ethics, and the broader social impact and responsibility involved in AI technology rollouts.",
+    url: "#reflections"
+  },
+  {
+    title: "Senior design presentation",
+    text: "Mubina has a CPRE 4910 presentation for the LLM Agentic System for Circuit Card Design available as a supporting project artifact.",
+    answer: "Yes. The Senior Design section links to Mubina's CPRE 4910 project presentation as a supporting artifact for the LLM Agentic System for Circuit Card Design.",
+    url: "https://mubina-s.github.io/pi-sme-project-presentation/"
+  },
+  {
+    title: "Resume",
+    text: "Mubina's updated resume lists Cyber Security Engineering at Iowa State University, anticipated graduation May 2027, cybersecurity lab experience, technical projects, Iowa State University Foundation leadership experience, cybersecurity and programming skills, and languages.",
+    answer: "Mubina's updated resume is available from the Resume link in the main navigation and hero area.",
+    url: "assets/Mubina_Sadriddinova_Resume.pdf"
+  }
+
 ];

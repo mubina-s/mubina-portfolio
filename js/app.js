@@ -74,6 +74,86 @@
     });
   }
 
+  // --- Page polish: progress, active nav, project filters, utility buttons ---
+  const scrollProgress = document.getElementById('scrollProgress');
+  const backToTop = document.getElementById('backToTop');
+  const updatePageProgress = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    if (scrollProgress) scrollProgress.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 700);
+  };
+  window.addEventListener('scroll', updatePageProgress, { passive: true });
+  updatePageProgress();
+
+  if (backToTop) {
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  const internalNavLinks = [...document.querySelectorAll('#siteNav a[href^="#"]')];
+  const navSections = internalNavLinks
+    .map(link => ({ link, section: document.querySelector(link.getAttribute('href')) }))
+    .filter(item => item.section);
+  if (navSections.length) {
+    const navObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      internalNavLinks.forEach(a => a.classList.remove('active'));
+      const match = navSections.find(item => item.section === visible.target);
+      if (match) match.link.classList.add('active');
+    }, { rootMargin: '-28% 0px -58% 0px', threshold: [0, .15, .4] });
+    navSections.forEach(item => navObserver.observe(item.section));
+  }
+
+  const filterButtons = document.querySelectorAll('.filter-button');
+  const projectCards = document.querySelectorAll('#projects .project-card');
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter || 'all';
+      filterButtons.forEach(b => b.classList.toggle('active', b === button));
+      projectCards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.classList.toggle('project-hidden', !show);
+      });
+    });
+  });
+
+  const copyEmail = document.getElementById('copyEmail');
+  if (copyEmail) {
+    copyEmail.addEventListener('click', async () => {
+      const email = copyEmail.dataset.email || 'mubish@iastate.edu';
+      try {
+        await navigator.clipboard.writeText(email);
+        copyEmail.textContent = 'Copied ✓';
+        copyEmail.classList.add('copied');
+        setTimeout(() => { copyEmail.textContent = 'Copy email'; copyEmail.classList.remove('copied'); }, 1800);
+      } catch (_) {
+        window.location.href = `mailto:${email}`;
+      }
+    });
+  }
+
+  const terminalLive = document.getElementById('terminalLive');
+  if (terminalLive && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const phrases = ['learning // building // securing', 'linux // networks // security', 'agentic ai // systems // research'];
+    let phraseIndex = 0, charIndex = 0, deleting = false;
+    const tick = () => {
+      const phrase = phrases[phraseIndex];
+      if (!deleting) {
+        charIndex = Math.min(phrase.length, charIndex + 1);
+        terminalLive.textContent = phrase.slice(0, charIndex) + '▌';
+        if (charIndex === phrase.length) { deleting = true; return setTimeout(tick, 1300); }
+        setTimeout(tick, 45);
+      } else {
+        charIndex = Math.max(0, charIndex - 1);
+        terminalLive.textContent = phrase.slice(0, charIndex) + '▌';
+        if (charIndex === 0) { deleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; }
+        setTimeout(tick, 24);
+      }
+    };
+    tick();
+  }
+
   // --- Large Cinematic Scroll-Driven Frame Animation Engine ---
   const TOTAL_FRAMES = 240;
   const FRAME_PREFIX = 'assests/ezgif-frame-';
